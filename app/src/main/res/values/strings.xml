@@ -11,4 +11,7 @@
 
     <!-- Action -->
     <string name="action_check_again">Try Again</string>
+
+    <!-- Transition Name -->
+    <string name="text_transition_grid_cover">transition_grid_cover</string>
 </resources>

@@ -6,10 +6,6 @@ import android.os.Parcelable;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Public Gist https://api.github.com/gists/public
@@ -125,6 +121,9 @@ public class GitPublicGist implements Parcelable {
         this.description = description;
     }
 
+    public GitPublicGist() {
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -142,9 +141,7 @@ public class GitPublicGist implements Parcelable {
         dest.writeInt(this.comments);
         dest.writeString(this.commentUrl);
         dest.writeParcelable(this.owner, flags);
-    }
-
-    public GitPublicGist() {
+        dest.writeString(this.description);
     }
 
     protected GitPublicGist(Parcel in) {
@@ -158,9 +155,10 @@ public class GitPublicGist implements Parcelable {
         this.comments = in.readInt();
         this.commentUrl = in.readString();
         this.owner = in.readParcelable(GitUserModel.class.getClassLoader());
+        this.description = in.readString();
     }
 
-    public static final Parcelable.Creator<GitPublicGist> CREATOR = new Parcelable.Creator<GitPublicGist>() {
+    public static final Creator<GitPublicGist> CREATOR = new Creator<GitPublicGist>() {
         @Override
         public GitPublicGist createFromParcel(Parcel source) {
             return new GitPublicGist(source);

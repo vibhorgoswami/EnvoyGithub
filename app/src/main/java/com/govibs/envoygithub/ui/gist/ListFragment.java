@@ -8,8 +8,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -23,11 +21,11 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.govibs.core.data.DataManager;
-import com.govibs.core.data.model.GitFiles;
 import com.govibs.core.data.model.GitPublicGist;
 import com.govibs.core.ui.gist.GistContract;
 import com.govibs.core.ui.gist.GistPresenter;
 import com.govibs.envoygithub.R;
+import com.govibs.envoygithub.ui.gistdetail.GistDetailActivity;
 import com.govibs.envoygithub.utils.AppUtils;
 import com.govibs.envoygithub.utils.UiUtils;
 
@@ -176,12 +174,11 @@ public class ListFragment extends Fragment implements GistContract.GistView, Lis
 
     @Override
     public void onListClick(GitPublicGist publicGist, View sharedElementView, int adapterPosition) {
-
-    }
-
-    @Override
-    public void showGist(GitPublicGist gitPublicGist) {
-
+        if (getActivity() == null) {
+            return;
+        }
+        startActivity(GistDetailActivity.newStartIntent(getActivity(), publicGist),
+                UiUtils.makeTransitionBundle(getActivity(), sharedElementView));
     }
 
     @Override
@@ -195,11 +192,6 @@ public class ListFragment extends Fragment implements GistContract.GistView, Lis
             mSwipeToRefreshLayout.setEnabled(true);
         }
         mListAdapter.addItems(gitPublicGists);
-    }
-
-    @Override
-    public void showFilesList(List<GitFiles> gitFilesList) {
-
     }
 
     private void setupViews() {
@@ -216,6 +208,7 @@ public class ListFragment extends Fragment implements GistContract.GistView, Lis
         mGistRecyclerView.setLayoutManager(layoutManager);
         mGistRecyclerView.addOnScrollListener(setupScrollListener(isTablet, layoutManager));
         mGistRecyclerView.setAdapter(mListAdapter);
+        mListAdapter.setListInteractionListener(this);
     }
 
     private RecyclerView.LayoutManager setUpLayoutManager(@NonNull Context context, boolean isTabletLayout) {

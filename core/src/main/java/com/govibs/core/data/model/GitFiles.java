@@ -2,13 +2,9 @@ package com.govibs.core.data.model;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonSerializer;
-import com.fasterxml.jackson.databind.SerializerProvider;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-import java.io.IOException;
+import org.json.JSONObject;
+
 import java.io.Serializable;
 
 /**
@@ -19,14 +15,13 @@ import java.io.Serializable;
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class GitFiles implements Serializable {
 
-    @JsonSerialize(using = GitFilesSerializer.class)
-    private Object info;
+    private JSONObject info;
 
-    public Object getInfo() {
+    public JSONObject getInfo() {
         return info;
     }
 
-    public void setInfo(Object info) {
+    public void setInfo(JSONObject info) {
         this.info = info;
     }
 

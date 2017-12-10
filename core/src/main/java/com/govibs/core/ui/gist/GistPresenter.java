@@ -32,13 +32,12 @@ public class GistPresenter extends BasePresenter<GistContract.GistView> implemen
     }
 
     @Override
-    public void onGistFileRequested(String userId) {
-
-    }
-
-    @Override
     public void onListEndReached(Integer offset, Integer limit) {
-
+        if (!isViewAttached()) {
+            return;
+        }
+        // Show no more data to load.
+        mView.hideProgress();
     }
 
     private void getGitPublicList(Integer offset, Integer limit) {

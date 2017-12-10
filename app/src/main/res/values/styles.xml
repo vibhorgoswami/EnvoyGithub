@@ -8,9 +8,15 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="AppTheme.Splash" parent="AppTheme">
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.Splash" parent="AppTheme.NoActionBar">
         <item name="android:windowBackground">@layout/layout_launcher_background</item>
     </style>
+
 
     <style name="ItemListName" parent="TextAppearance.AppCompat.Light.SearchResult.Subtitle">
         <item name="android:textColor">@android:color/white</item>

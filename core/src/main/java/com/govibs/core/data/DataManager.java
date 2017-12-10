@@ -33,4 +33,8 @@ public class DataManager {
         mGistService.getPublicGist().enqueue(listener);
     }
 
+    public void getPublicFilesOnGist() {
+
+    }
+
 }
