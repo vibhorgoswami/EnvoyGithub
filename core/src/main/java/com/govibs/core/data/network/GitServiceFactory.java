@@ -38,14 +38,14 @@ public class GitServiceFactory {
         OkHttpClient.Builder httpClientBuilder = new OkHttpClient().newBuilder();
         httpClientBuilder.connectTimeout(HTTP_CONNECT_TIMEOUT, TimeUnit.SECONDS);
         httpClientBuilder.readTimeout(HTTP_READ_TIMEOUT, TimeUnit.SECONDS);
-        httpClientBuilder.addInterceptor(makeLoggingInterceptor());
+        //httpClientBuilder.addInterceptor(makeLoggingInterceptor());
         return httpClientBuilder.build();
     }
 
-    private static HttpLoggingInterceptor makeLoggingInterceptor() {
+    /*private static HttpLoggingInterceptor makeLoggingInterceptor() {
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
         logging.setLevel(BuildConfig.DEBUG ? HttpLoggingInterceptor.Level.BODY
                 : HttpLoggingInterceptor.Level.NONE);
         return logging;
-    }
+    }*/
 }

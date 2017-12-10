@@ -8,4 +8,26 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme.Splash" parent="AppTheme">
+        <item name="android:windowBackground">@layout/layout_launcher_background</item>
+    </style>
+
+    <style name="ItemListName" parent="TextAppearance.AppCompat.Light.SearchResult.Subtitle">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="ItemTitleName" parent="TextAppearance.AppCompat.Headline">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:shadowColor">@color/colorPrimaryDark</item>
+        <item name="android:shadowRadius">3.0</item>
+    </style>
+
+    <style name="ItemDetailTitle" parent="@style/TextAppearance.AppCompat.Small">
+        <item name="android:textColor">@android:color/holo_red_dark</item>
+    </style>
+
+    <style name="SubItemPagerTitle" parent="TextAppearance.AppCompat.Headline">
+        <item name="android:textSize">16sp</item>
+    </style>
+
 </resources>

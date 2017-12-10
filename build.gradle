@@ -30,6 +30,7 @@ allprojects {
         jacksonLibraryVersion = "2.9.0"
         okhttpLoggerLibraryVersion = "3.3.0"
         leakCanaryLibraryVersion = "1.5.1"
+        butterknifeLibraryVersion = "8.8.1"
     }
 }
 

@@ -31,13 +31,11 @@ public class GitPublicGist implements Parcelable {
     private String gitPushUrl;
     @JsonProperty("html_url")
     private String htmlUrl;
-    @JsonProperty("files")
-    @JsonSerialize(using = GitFilesSerializer.class)
-    private List<GitFiles> gitFilesList;
     private int comments;
     @JsonProperty("comments_url")
     private String commentUrl;
     private GitUserModel owner;
+    private String description;
 
     public String getUrl() {
         return url;
@@ -95,14 +93,6 @@ public class GitPublicGist implements Parcelable {
         this.htmlUrl = htmlUrl;
     }
 
-    public List<GitFiles> getGitFilesList() {
-        return gitFilesList;
-    }
-
-    public void setGitFilesList(List<GitFiles> gitFilesList) {
-        this.gitFilesList = gitFilesList;
-    }
-
     public int getComments() {
         return comments;
     }
@@ -127,6 +117,14 @@ public class GitPublicGist implements Parcelable {
         this.owner = owner;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -141,7 +139,6 @@ public class GitPublicGist implements Parcelable {
         dest.writeString(this.gitPullUrl);
         dest.writeString(this.gitPushUrl);
         dest.writeString(this.htmlUrl);
-        dest.writeList(this.gitFilesList);
         dest.writeInt(this.comments);
         dest.writeString(this.commentUrl);
         dest.writeParcelable(this.owner, flags);
@@ -158,8 +155,6 @@ public class GitPublicGist implements Parcelable {
         this.gitPullUrl = in.readString();
         this.gitPushUrl = in.readString();
         this.htmlUrl = in.readString();
-        this.gitFilesList = new ArrayList<GitFiles>();
-        in.readList(this.gitFilesList, GitFiles.class.getClassLoader());
         this.comments = in.readInt();
         this.commentUrl = in.readString();
         this.owner = in.readParcelable(GitUserModel.class.getClassLoader());

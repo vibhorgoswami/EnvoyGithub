@@ -15,9 +15,11 @@ public interface GistContract {
 
     interface ViewActions {
 
-        void onGistRequested(String url);
+        void onGistRequested();
 
         void onGistFileRequested(String userId);
+
+        void onListEndReached(Integer offset, Integer limit);
 
     }
 

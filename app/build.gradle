@@ -18,6 +18,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
 }
 
 dependencies {
@@ -34,6 +38,9 @@ dependencies {
     implementation "com.android.support:transition:$supportLibraryVersion"
     // Image Loaders
     implementation "com.squareup.picasso:picasso:$picassoLibraryVersion"
+    // Data binding
+    implementation "com.jakewharton:butterknife:$butterknifeLibraryVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butterknifeLibraryVersion"
     // Test implementation
     testImplementation 'junit:junit:4.12'
     androidTestImplementation("com.android.support.test:runner:$testRunnerLibraryVersion") {

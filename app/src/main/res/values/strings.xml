@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">EnvoyGithub</string>
+
+    <bool name="isTablet">false</bool>
+    <!-- Title -->
+    <string name="title_list_home">Home</string>
+
+    <!-- Error -->
+    <string name="text_error_no_items_to_display">No items to display</string>
+    <string name="text_error_generic_server_error">Server is acting up again! It says you\'re %1$s</string>
+
+    <!-- Action -->
+    <string name="action_check_again">Try Again</string>
 </resources>
