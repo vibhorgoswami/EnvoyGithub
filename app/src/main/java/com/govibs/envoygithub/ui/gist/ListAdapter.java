@@ -25,11 +25,10 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
  * Generic list adapter
- * Created by Vibhor on 12/9/17.
+ * Created by Vibhor on 12/10/17.
  */
 
 public class ListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {

@@ -2,16 +2,26 @@
     <string name="app_name">EnvoyGithub</string>
 
     <bool name="isTablet">false</bool>
-    <!-- Title -->
-    <string name="title_list_home">Home</string>
-
+    <!-- Gist Detail -->
+    <string name="text_owner">Owner</string>
+    <string name="text_commits_url">View Commits</string>
+    <string name="text_files_info">Files in this Gist</string>
+    <!-- Owner -->
+    <string name="text_owner_followers">Followers</string>
+    <string name="text_owner_followers_count">0</string>
+    <string name="text_owner_following">Following</string>
+    <string name="text_owner_following_count">0</string>
+    <string name="text_owner_view_in_github">View In Github</string>
     <!-- Error -->
     <string name="text_error_no_items_to_display">No items to display</string>
-    <string name="text_error_generic_server_error">Server is acting up again! It says you\'re %1$s</string>
+    <string name="text_error_generic_server_error">Server is acting up again! \n%1$s</string>
+    <string name="text_error_no_user_information">No User information.</string>
+    <string name="text_error_something_went_wrong">Something went wrong&#8230;</string>
 
     <!-- Action -->
     <string name="action_check_again">Try Again</string>
 
     <!-- Transition Name -->
     <string name="text_transition_grid_cover">transition_grid_cover</string>
+    <string name="text_transition_web_url">transition_web_urlr</string>
 </resources>

@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
  * User Model API https://api.github.com/user
- * Created by Vibhor on 12/7/17.
+ * Created by Vibhor on 12/10/17.
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)

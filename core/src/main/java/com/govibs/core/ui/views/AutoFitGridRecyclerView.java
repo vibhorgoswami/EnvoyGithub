@@ -11,7 +11,7 @@ import android.view.animation.GridLayoutAnimationController;
 
 /**
  * Recycler view with grid layout manager which will set views spacing and animation.
- * Created by Vibhor on 11/10/17.
+ * Created by Vibhor on 12/10/17.
  */
 
 public class AutoFitGridRecyclerView extends RecyclerView {

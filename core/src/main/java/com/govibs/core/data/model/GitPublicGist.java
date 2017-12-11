@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * Public Gist https://api.github.com/gists/public
- * Created by Vibhor on 12/8/17.
+ * Created by Vibhor on 12/10/17.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)

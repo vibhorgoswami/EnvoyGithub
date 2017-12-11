@@ -6,11 +6,9 @@ import android.support.annotation.Nullable;
 import com.govibs.envoygithub.R;
 import com.govibs.envoygithub.ui.base.BaseActivity;
 
-import butterknife.ButterKnife;
-
 /**
  * Show a list inside a fragment.
- * Created by Vibhor on 12/8/17.
+ * Created by Vibhor on 12/10/17.
  */
 
 public class ListActivity extends BaseActivity {

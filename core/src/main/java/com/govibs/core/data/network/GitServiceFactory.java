@@ -1,17 +1,14 @@
 package com.govibs.core.data.network;
 
-import com.govibs.core.BuildConfig;
-
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
-import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
 /**
  *
- * Created by Vibhor on 12/8/17.
+ * Created by Vibhor on 12/10/17.
  */
 
 public class GitServiceFactory {

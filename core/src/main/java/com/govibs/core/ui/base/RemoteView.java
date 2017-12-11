@@ -2,7 +2,7 @@ package com.govibs.core.ui.base;
 
 /**
  *
- * Created by Vibhor on 12/7/17.
+ * Created by Vibhor on 12/10/17.
  */
 
 public interface RemoteView {
@@ -18,5 +18,7 @@ public interface RemoteView {
     void showError(String errorMessage);
 
     void showMessageLayout(boolean show);
+
+    void showSnackBar();
 
 }

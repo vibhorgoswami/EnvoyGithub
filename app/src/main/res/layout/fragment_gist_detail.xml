@@ -15,17 +15,89 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
-            android:id="@+id/llDetailContentFrame"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:focusableInTouchMode="true"
-            android:orientation="vertical"
-            android:paddingBottom="@dimen/activity_vertical_margin" />
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/llContentContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tvOwnerInformation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@+id/ivOwnerMore"
+                        android:transitionName="@string/text_transition_web_url"
+                        android:layout_marginStart="10dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        style="@style/ItemListName"
+                        android:text="@string/text_owner" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/ivOwnerMore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:transitionName="@string/text_transition_web_url"
+                        android:layout_marginEnd="10dp"
+                        app:srcCompat="@drawable/ic_chevron_right_white_24dp" />
+                </RelativeLayout>
+
+                <include layout="@layout/layout_generic_divider" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tvGistFileInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_files_info"
+                        android:layout_marginStart="10dp"
+                        android:transitionName="@string/text_transition_web_url"
+                        android:paddingTop="10dp"
+                        style="@style/ItemListName" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/ivFilesOpenInBrowser"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="10dp"
+                        android:transitionName="@string/text_transition_web_url"
+                        app:srcCompat="@drawable/ic_open_in_browser_white_24dp" />
+
+                </RelativeLayout>
+
+                <WebView
+                    android:id="@+id/webViewFiles"
+                    android:layout_margin="10dp"
+                    android:minWidth="200dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <include layout="@layout/layout_content_progress" />
+
+            <include layout="@layout/layout_empty_message" />
+
+        </LinearLayout>
+
 
     </android.support.v4.widget.NestedScrollView>
-
-    <include layout="@layout/layout_content_progress" />
-
-    <include layout="@layout/layout_empty_message" />
 
 </android.support.design.widget.CoordinatorLayout>
